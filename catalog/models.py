@@ -36,7 +36,7 @@ class Author(models.Model):
                                  verbose_name="Фамилия автора")
     date_of_birth = models.DateField(help_text="Введите дату рождения",
                                      verbose_name="Дата рождения",
-                                     noll=True, blank=True)
+                                     null=True, blank=True)
     about = models.TextField(help_text="Введите сведения об авторе",
                              verbose_name="Сведения об авторе")
     photo = models.ImageField(upload_to='images',
