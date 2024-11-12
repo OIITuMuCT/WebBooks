@@ -5,6 +5,11 @@ from django.views.generic import ListView, DeleteView
 from .models import Book, Author, BookInstance
 
 # Create your views here.
+def about(request):
+    return render(request, 'catalog/about.html', )
+
+def contact(request):
+    return render(request, 'catalog/contact.html')
 
 def index(request):
     text_head = 'На нашем сайте вы можете получить книги в электронном виде'
@@ -45,3 +50,5 @@ class AuthorDetailView(DeleteView):
     model = Author
     context_object_name = 'author'
     template_name = 'catalog/author_detail.html'
+
+
