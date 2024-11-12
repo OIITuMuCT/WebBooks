@@ -6,7 +6,11 @@ from .models import Book, Author, BookInstance
 
 # Create your views here.
 def about(request):
-    return render(request, 'catalog/about.html', )
+    text_head = 'Сведения о компании'
+    name = 'OOO "Интеллектуальные информационные системы"'
+    rab1 = 'Разработка приложений на основе систем искусственного интеллекта'
+    context = {'text_head':text_head, 'rab1': rab1}
+    return render(request, 'catalog/about.html', context)
 
 def contact(request):
     return render(request, 'catalog/contact.html')
