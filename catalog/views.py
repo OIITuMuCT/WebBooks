@@ -9,10 +9,14 @@ def about(request):
     text_head = 'Сведения о компании'
     name = 'OOO "Интеллектуальные информационные системы"'
     rab1 = 'Разработка приложений на основе систем искусственного интеллекта'
-    context = {'text_head':text_head, 'rab1': rab1}
+    rab2 = 'Распознавание объектов дорожной инфраструктуры'
+    rab3 = 'Создание графических АРТ-объектов на основе систем искусственного интеллекта'
+    rab4 = 'Создание цифровых интерактивных книг, учебных пособий автоматизированных обучающих систем'
+    context = {'text_head':text_head, 'rab1': rab1, 'rab2':rab2, 'rab3':rab3, 'rab4': rab4}
     return render(request, 'catalog/about.html', context)
 
 def contact(request):
+    text_head = 'Контакты'
     return render(request, 'catalog/contact.html')
 
 def index(request):
