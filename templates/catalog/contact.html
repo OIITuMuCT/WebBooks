@@ -1,6 +1,33 @@
 {% extends "catalog/base.html" %}
 
+<head>
+    {% load static %}
+</head>
+
 {% block content %}
-<h1>Контакты</h1>
+<div class="conatainer-fluid">
+    <div class="row my-2 text-center">
+        <div class="col-5"></div>
+        <div class="col-1 text-center">
+            <img src="{% static "images/codex.png" %}" width="300" heigth="100" alt="">
+        </div>
+        <div class="col-5"></div>
+    </div>
+    <div class="row my-2 text-primary text-center">
+        <h3>{{name}}</h3>
+    </div>
+    <div class="row my-2 text-muted">
+        <h4 class="text-center">{{text_head}}</h4>
+    </div>
+    <div class="row my-2">
+        <!--Пустые колонки слева от таблицы-->
+        <div class="col-3"></div>
+        <div class="col-6">
+            <table>
+                
+            </table>
+        </div>
+    </div>
+</div>
 
 {% endblock %}
