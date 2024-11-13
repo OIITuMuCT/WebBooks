@@ -78,6 +78,83 @@
         <!--пустые колонки от аккардеона-->
         <div class="col-3"></div>
         <!--6 колонок с аккордеоном-->
-        
+        <div class="accordion" id="accordionExample">
+            <!--Аккордеон элемент 1-->
+            <div class="accordion-item">
+                <h2 class="accordion-header" id="headingOne">
+                    <button class="accordion-button" type="button" 
+                    data-bs-toggle="collapse"
+                    data-bs-target="#collapseOne"
+                    aria-expanded="true" aria-controls="collapseOne">
+                    Искусственный интеллект
+                    </button>
+                </h2>
+                <div class="accordion-collapse collapse" id="collapseOne" 
+                aria-labelledby="headingOne" data-bs-parent="#accordionExample">
+                <div class="accordion-body">
+                    <strong>Разработка под ключ.</strong> Разрабатываем
+                    информационные комплексы на базе систем 
+                    искусственного интеллекта.
+                </div>
+                </div>
+            </div>
+            <!--Аккордеон элемент 2-->
+            <div class="accordion-item">
+                <h2 class="accordion-header" id="headingTwo">
+                    <button class="accordion-button collapsed" type="button"
+                    data-bs-toggle="collapse" data-bs-target="#collapseTwo"
+                    aria-expanded="false" aria-controls="collapseTwo">
+                    Дорожная инфраструктура
+                </button>
+                </h2>
+                <div class="accordion-collapse collapse" id="collapseTwo"
+                aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
+                <div class="accordion-body">
+                    <strong>Системы распознования.</strong> Разрабатываем Системы
+                    распознавания объектов дорожной инфраструктуры с использованием 
+                    нейронных сетей.
+                </div>
+                </div>
+            </div>
+            <!--Аккордеон элемент 3-->
+            <div class="accordion-item">
+                <h2 class="accordion-header" id="headingThree">
+                    <button class="accordion-button collapsed" type="button"
+                    data-bs-toggle="collapse"
+                    data-bs-target="#collapseThree"
+                    aria-expanded="false" aria-conrtols="collapseThree">
+                    Арт-объекты
+                    </button>
+                </h2>
+                <div id="collapseThree" class="accordion-collapse collapse" 
+                aria-labelledby="headingThree" data-bs-parent="#accordionExample">
+                <div class="accordion-body">
+                    <strong>Обработка изображений</strong> Создаем уникальные изображения
+                    с использованием систем машинного зрения и искусственного интеллекта.
+                </div>
+                </div>
+            <!--Аккордеон элемент 4-->
+            <div class="accordion-item">
+                <h2 class="accordion-header" id="headingFour">
+                    <button class="accordion-button collapsed" type="button"
+                    data-bs-toggle="collapse"
+                    data-bs-target="#collapseFour"
+                    aria-expanded="false" aria-controls="collapseFour">
+                    Интерактивные электронные книги
+                    </button>
+                </h2>
+                <div id="collapseFour" class="accordion-collapse collapse"
+                aria-labelledby="headingFour" data-bs-parent="accordionExample">
+                <div class="accordion-body">
+                    <strong>Интерактивное обучение</strong> Разрабатываем интерактивные 
+                    обучающие пособия, электронные книги для студентов и школьников.
+                </div>
+                </div>
+            </div>
+            <!--Аккордеон конец-->
+            </div>
+        </div>
+        <!--Пустые колонки справа от аккодеона-->
+        <div class="col-3"></div>
     </div>
 {% endblock %}
