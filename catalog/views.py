@@ -17,7 +17,20 @@ def about(request):
 
 def contact(request):
     text_head = 'Контакты'
-    return render(request, 'catalog/contact.html')
+    name = 'ООО "Интеллектуальные информационные системы'
+    address = 'Москва, ул. Планерная, д. 20, к. 1'
+    tel = '495-345-45-45'
+    email = 'iis_info@example.com'
+    # Словарь для передачи данных в шаблон index.html
+    context = {
+        'text_head': text_head,
+        'name': name,
+        'address': address,
+        'tel': tel,
+        'email': email,
+    }
+    # Передача словаря context с данными в шаблон
+    return render(request, 'catalog/contact.html', context)
 
 def index(request):
     text_head = 'На нашем сайте вы можете получить книги в электронном виде'
