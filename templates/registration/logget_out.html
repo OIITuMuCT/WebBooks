@@ -1,6 +1,16 @@
-{% extends "catalog/base.html" %}
+{% comment %} {% extends "catalog/base.html" %}
 
 {% block content %}
 <p>Выход из системы!</p>
 <a href="{% url "login" %}">Нажмите на эту ссылку для входа в симтему</a>
+{% endblock %} {% endcomment %}
+{% extends "catalog/base.html" %}
+{% load i18n %}
+
+{% block content %}
+
+<p>{% translate "Thanks for spending some quality time with the web site today." %}</p>
+
+<p><a href="{% url 'accounts:login' %}">{% translate 'Log in again' %}</a></p>
+
 {% endblock %}
