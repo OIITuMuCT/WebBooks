@@ -1,7 +1,7 @@
 from django import forms
 from datetime import date
 
-from .models import Author
+from .models import Author, Book
 
 # Форма добавления в БД новых авторов
 class Form_add_author(forms.Form):
@@ -19,4 +19,10 @@ class Form_add_author(forms.Form):
 class Form_edit_author(forms.ModelForm):
     class Meta:
         model = Author
+        fields = "__all__"
+
+
+class BookModelForm(forms.ModelForm):
+    class Meta:
+        model = Book
         fields = "__all__"

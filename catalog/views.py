@@ -152,3 +152,8 @@ def edit_books(request):
     book = Book.objects.all()
     context = {'book': book}
     return render(request, 'catalog/edit_books.html', context)
+
+def book_create(request):
+    book = Book.objects.all()
+    context = {'book': book}
+    return render(request, 'catalog/book_create.html', context)
