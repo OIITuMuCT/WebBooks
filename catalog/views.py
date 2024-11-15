@@ -1,7 +1,8 @@
 from django.shortcuts import render
-from django.urls import reverse
+from django.urls import reverse, reverse_lazy
 from django.http import HttpResponseRedirect, HttpResponseNotFound
-from django.views.generic import ListView, DeleteView
+from django.views.generic import ListView, DetailView
+from django.views.generic.edit import CreateView, UpdateView, DeleteView
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.views import generic
 
@@ -65,10 +66,28 @@ class BookListView(ListView):
     context_object_name = 'books'
     paginate_by = 3
 
-class BookDetailView(DeleteView):
+
+class BookDetailView(DetailView):
     model = Book
-    context_object_name = 'book'
-    template_name = 'catalog/book_detail.html'
+    context_object_name = "book"
+    template_name = "catalog/book_detail.html"
+
+# Класс для создания в БД новой записи о книге
+class BookCreate(CreateView):
+    model = Book
+    fields = "__all__"
+    success_url = reverse_lazy('edit_books')
+
+# Класс для обновления в БД записи о книге
+class BookUpdate(UpdateView):
+    model = Book
+    fields = '__all__'
+    success_url = reverse_lazy('edit_books')
+
+class BookDelete(DeleteView):
+    model = Book
+    fields = "__all__"
+    success_url = reverse_lazy('edit_books')
 
 class AuthorListView(ListView):
     model = Author
@@ -152,8 +171,3 @@ def edit_books(request):
     book = Book.objects.all()
     context = {'book': book}
     return render(request, 'catalog/edit_books.html', context)
-
-def book_create(request):
-    book = Book.objects.all()
-    context = {'book': book}
-    return render(request, 'catalog/book_create.html', context)
