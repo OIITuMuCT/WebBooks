@@ -3,6 +3,7 @@ from datetime import date
 
 from .models import Author, Book
 
+
 # Форма добавления в БД новых авторов
 class Form_add_author(forms.Form):
     first_name = forms.CharField(label="Имя автора")
@@ -10,11 +11,11 @@ class Form_add_author(forms.Form):
     date_of_birth = forms.DateField(
         label="Дата рождения",
         initial=format(date.today()),
-        widget=forms.widgets.DateInput(attrs={'type': 'date'})
+        widget=forms.widgets.DateInput(attrs={"type": "date"}),
     )
-    about = forms.CharField(label="Сведения об авторе",
-                            widget=forms.Textarea)
+    about = forms.CharField(label="Сведения об авторе", widget=forms.Textarea)
     photo = forms.ImageField(label="Фото автора")
+
 
 class Form_edit_author(forms.ModelForm):
     class Meta:
